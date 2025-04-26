@@ -1,5 +1,5 @@
-title: tonic-starter
-description: ""
+title: "Arch Linux User"
+description: "Use this portfolio template to tell the world that you use Arch Linux."
 encoding: utf-8
 
 exclude: ["README.md", "LICENSE", "*.gem", "*.gemspec", "Gemfile.lock"]
