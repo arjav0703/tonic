@@ -1,8 +1,9 @@
-title: "Arch Linux User"
+name: "Arjav Jain"
+title: Arjav Jain
 description: "Use this portfolio template to tell the world that you use Arch Linux."
+footer: "If you're not using Arch Linux, this is your sign to check it out!"
+
 encoding: utf-8
 enable_dark_theme: true
-
-footer: "If you're not using Arch Linux, this is your sign to check it out!"
 
 exclude: ["README.md", "LICENSE", "*.gem", "*.gemspec", "Gemfile.lock"]

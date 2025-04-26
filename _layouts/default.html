@@ -1,14 +1,55 @@
 <html>
     {% include head.html %}
-    <body>
-        <nav>
-            <ul class="navbar">
+    <body class="light-theme">
+        <header class="site-header" style="con">
+            <div class="logo-container">
+                <a href="/" class="logo-link">
+                    <img
+                        src="https://archlinux.org/static/logos/archlinux-logo-black-scalable.f931920e6cdb.svg"
+                        alt="Arch Linux Logo"
+                        class="logo"
+                    />
+                </a>
+                <!-- <h1 class="site-title">{{ site.title }}</h1> -->
+            </div>
+            <div class="theme-toggle-container">
+                <label class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </header>
+        <nav class="navbar">
+            <ul class="navbar-list">
                 <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item">
                     <a href="/facts" class="nav-link">Fun Facts</a>
                 </li>
             </ul>
         </nav>
-        {{content}}
+        <main class="content">{{ content }}</main>
+        <footer class="site-footer">
+            <p>{{ site.footer }}</p>
+        </footer>
+        <script>
+            // Theme toggle logic
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Load saved theme from localStorage
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                body.className = savedTheme;
+                themeToggle.checked = savedTheme === "dark-theme";
+            }
+
+            themeToggle.addEventListener("change", () => {
+                const newTheme = themeToggle.checked
+                    ? "dark-theme"
+                    : "light-theme";
+                body.className = newTheme;
+                localStorage.setItem("theme", newTheme);
+            });
+        </script>
     </body>
 </html>
